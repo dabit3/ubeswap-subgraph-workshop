@@ -74,8 +74,11 @@ graph init --contract-name Factory \
 --product subgraph-studio \
 --from-contract 0x62d5b84bE28a183aBB507E125B384122D2C25fAE 
 
+? Subgraph name › your-subgraph-name-from-studio
+? Directory to create the subgraph in › same as above (or your preferred folder name)
+? Ethereum network › celo
+? Contract address › 0x62d5b84bE28a183aBB507E125B384122D2C25fAE
 # You will be prompted for ABI File path:
-
 ABI file (path): abis/Factory.json
 Contract name: Factory
 ```
