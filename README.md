@@ -131,12 +131,6 @@ type Pair @entity {
   id: ID!
   token0: Token!
   token1: Token!
-  reserve0: BigDecimal!
-  reserve1: BigDecimal!
-  reserveUSD: BigDecimal!
-  reserveCELO: BigDecimal!
-  token0Price: BigDecimal!
-  token1Price: BigDecimal!
   createdAtTimestamp: BigInt!
   createdAtBlockNumber: BigInt!
   swaps: [Swap!]! @derivedFrom(field: "pair")
@@ -263,7 +257,7 @@ templates:
         - Token
       abis:
         - name: Pair
-          file: ./abis/pair.json
+          file: ./abis/Pair.json
         - name: Factory
           file: ./abis/Factory.json
       eventHandlers:
