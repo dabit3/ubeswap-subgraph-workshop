@@ -1,0 +1,37 @@
+type Token @entity {
+  id: ID!
+  symbol: String!
+  name: String!
+  decimals: BigInt!
+}
+
+type Transaction @entity {
+  id: ID!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  swaps: [Swap]!
+}
+
+type Pair @entity {
+  id: ID!
+  token0: Token!
+  token1: Token!
+  createdAtTimestamp: BigInt!
+  createdAtBlockNumber: BigInt!
+  swaps: [Swap!]! @derivedFrom(field: "pair")
+}
+
+type Swap @entity {
+  id: ID!
+  timestamp: BigInt!
+  pair: Pair!
+  transaction: Transaction!
+  sender: Bytes!
+  from: Bytes!
+  amount0In: BigDecimal!
+  amount1In: BigDecimal!
+  amount0Out: BigDecimal!
+  amount1Out: BigDecimal!
+  to: Bytes!
+  logIndex: BigInt
+}
