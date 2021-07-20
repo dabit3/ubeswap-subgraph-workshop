@@ -187,7 +187,7 @@ abis:
     file: ./abis/ERC20.json
 ```
 
-Next, update the dataSources.mapping.eventHandlers to include only the following event handler:
+Next, update the `dataSources.mapping.eventHandlers` to include only the following event handler:
 
 ```yaml
 eventHandlers:
