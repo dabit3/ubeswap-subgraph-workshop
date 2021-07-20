@@ -187,6 +187,14 @@ abis:
     file: ./abis/ERC20.json
 ```
 
+Next, update the dataSources.mapping.eventHandlers to include only the following event handler:
+
+```yaml
+eventHandlers:
+  - event: PairCreated(indexed address,indexed address,address,uint256)
+    handler: handleNewPair
+```
+
 Finally, update the configuration to add the `startBlock`. If you do not define a `startBlock`, the subgraph will begin indexing events from the [genesis block](https://www.investopedia.com/terms/g/genesis-block.asp).
 
 ```yaml
